@@ -3,7 +3,7 @@
 
 class Trener: public Osoba
 {
-private:
+protected:
     string sport;
     int staz;
     int plata;

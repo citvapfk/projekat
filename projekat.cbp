@@ -32,16 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Bazen.h" />
-		<Unit filename="Igrac.h" />
-		<Unit filename="Osoba.h" />
-		<Unit filename="Rekreativac.h" />
-		<Unit filename="Sponzor.h" />
-		<Unit filename="SportskiCentar.h" />
-		<Unit filename="SportskiObjekat.h" />
-		<Unit filename="Teretana.h" />
-		<Unit filename="Trener.h" />
-		<Unit filename="Ugovor.h" />
+		<Unit filename="Bazen.hpp" />
+		<Unit filename="Igrac.hpp" />
+		<Unit filename="Kompanija.hpp" />
+		<Unit filename="Osoba.hpp" />
+		<Unit filename="Rekreativac.hpp" />
+		<Unit filename="Sponzor.hpp" />
+		<Unit filename="SportskiCentar.hpp" />
+		<Unit filename="SportskiObjekat.hpp" />
+		<Unit filename="Teretana.hpp" />
+		<Unit filename="Trener.hpp" />
+		<Unit filename="Ugovor.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

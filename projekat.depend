@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1587905484 source:c:\users\vuk\documents\github\projekat\main.cpp
+	<iostream>
+	"SportskiObjekat.hpp"
+	"Bazen.hpp"
+
+1587904861 c:\users\vuk\documents\github\projekat\sportskiobjekat.hpp
+
+1587905681 c:\users\vuk\documents\github\projekat\bazen.hpp
+

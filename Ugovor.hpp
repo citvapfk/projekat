@@ -3,7 +3,7 @@
 
 class Ugovor
 {
-private:
+protected:
     Sponzor u;
     SportskiCentar s;
     int duzina;

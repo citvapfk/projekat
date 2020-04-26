@@ -3,16 +3,10 @@
 
 class Rekreativac: public Osoba
 {
-private:
+protected:
     bool clan;
 };
 
-class Kompanija
-{
-private:
-    string ime;
-    string delatnost;
-    string adresa;
-};
+
 
 #endif // REKREATIVAC_H_INCLUDED

@@ -3,7 +3,7 @@
 
 class SportskiCentar: public Kompanija
 {
-private:
+protected:
     string listaObjekata;
 };
 

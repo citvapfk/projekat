@@ -3,7 +3,7 @@
 
 class Teretana: public SportskiObjekat
 {
-private
+protected:
     bool tusevi;
     int sprave;
 };

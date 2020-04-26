@@ -3,7 +3,7 @@
 
 class Sponzor: public Kompanija
 {
-private:
+protected:
     string nacinReklame;
     int pare;
 };
