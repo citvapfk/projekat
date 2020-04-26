@@ -23,6 +23,12 @@ public:
         pol=po;
         datumRodjenja=dat;
     }
+    Osoba(const Osoba& o){
+        ime=o.ime;
+        prezime=o.prezime;
+        pol=o.pol;
+        datumRodjenja=o.datumRodjenja;
+    }
 };
 
 #endif // OSOBA_H_INCLUDED
