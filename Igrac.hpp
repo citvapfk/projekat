@@ -1,12 +1,14 @@
 #ifndef IGRAC_H_INCLUDED
 #define IGRAC_H_INCLUDED
 
-class Trener: public Osoba
+class Igrac: public Osoba
 {
 protected:
     string sport;
-    int staz;
+    int ugovor;
     int plata;
+public:
+    igrac
 };
 
 #endif // IGRAC_H_INCLUDED

@@ -15,7 +15,13 @@ public:
     Bazen(const SportskiObjekat& s, double duz, double sir, double dub, double temp):SportskiObjekat(s), duzina(duz), sirina(sir), dubina(dub), temperaturaVode(temp){};
 
     double getDuzina(){return duzina;}
-    void setDuzina(double d){duzina = d;}
+    double getSirina(){return sirina;}
+    double getDubina(){return dubina;}
+    double getTemperaturaVode(){return temperaturaVode;}
+    void setDuzina(double d){duzina=d;}
+    void setSirina(double s){sirina=s;}
+    void setDubina(double d){dubina=d;}
+    void setTemperaturaVode(double t){temperaturaVode=t;}
 };
 
 #endif // BAZEN_H_INCLUDED

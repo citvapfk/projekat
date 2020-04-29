@@ -27,6 +27,13 @@ public:
         iznajmljivanje=s.iznajmljivanje;
         radnoVreme=s.radnoVreme;
     }
+
+    int getBrGledalaca(){return brGledalaca;}
+    bool getOtvorenost(){return otvorenost;}
+    bool getIznajmljivanje(){return iznajmljivanje;}
+    void setBrGledalaca(int b){brGledalaca=b;}
+    void setOtvorenost(int o){otvorenost=o;}
+    void setIznajmljivanje(int i){iznajmljivanje=i;}
 };
 
 #endif // SPORTSKIOBJEKAT_H_INCLUDED
