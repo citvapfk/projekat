@@ -4,7 +4,8 @@
 class SportskiCentar: public Kompanija
 {
 protected:
-    string listaObjekata;
+    SportskiObjekat niz[10];
+    Osoba zaposleni[20];
 };
 
 #endif // SPORTSKICENTAR_H_INCLUDED
