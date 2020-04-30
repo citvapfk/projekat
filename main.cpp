@@ -4,18 +4,27 @@ using namespace std;
 
 #include "SportskiObjekat.hpp"
 #include "Bazen.hpp"
-
+#include "Kompanija.hpp"
+#include "SportskiCentar.hpp"
+#include "Osoba.hpp"
 
 int main()
 {
-    Bazen b;
-    cout<<b.getDuzina()<<endl;
-    Bazen b2(0, false, false, "" , 55, 25, 2.6, 18);
-    cout<<b2.getDuzina()<<endl;
-    Bazen b3(b2);
-    b2.setDuzina(50);
-    cout<<b3.getDuzina()<<endl;
-    Bazen b4(SportskiObjekat(b2),60,30, 3, 23.6);
-    cout<<b4.getDuzina();
+    SportskiCentar sc;
+    cout << "Broj zaposlenih je " << sc.getBrojZaposlenih() << endl;
+
+    Osoba noviZaposleni("Vuk", "Vicentic", musko, "08.05.2003", 0);
+    sc.dodajZaposlenog(noviZaposleni);
+
+    cout << "Broj zaposlenih je " << sc.getBrojZaposlenih() << endl;
+    cout << "Poslenji zaposleni je  " << sc.getZaposleni(sc.getBrojZaposlenih()-1).getIme() << endl;
+
+    cout << "Saldo na racunu je " << noviZaposleni.getSaldo() << endl;
+    noviZaposleni.povecajSaldo(100);
+    cout << "Novi saldo na racunu je " << noviZaposleni.getSaldo() << endl;
+
+    //isplata plate treba da smanji saldo na racunu kompanije i da poveca saldo na racunu osobe
+    //ovde treba da kompaniji dodamo novi objekat saldo tipa double, i funckionalnost (metodu) na SportskomCentru isplataPlate (Osoba, double)
+    // i metod na klasi Osoba uplataclanarine(SporstkiCentar, double )
 
 }

@@ -1,10 +1,20 @@
 # depslib dependency file v1.0
-1587905484 source:c:\users\vuk\documents\github\projekat\main.cpp
+1588278475 source:c:\users\vuk\documents\github\projekat\main.cpp
 	<iostream>
 	"SportskiObjekat.hpp"
 	"Bazen.hpp"
+	"Kompanija.hpp"
+	"SportskiCentar.hpp"
+	"Osoba.hpp"
 
-1587904861 c:\users\vuk\documents\github\projekat\sportskiobjekat.hpp
+1588178690 c:\users\vuk\documents\github\projekat\sportskiobjekat.hpp
 
-1587905681 c:\users\vuk\documents\github\projekat\bazen.hpp
+1588181616 c:\users\vuk\documents\github\projekat\bazen.hpp
+
+1588274850 c:\users\vuk\documents\github\projekat\kompanija.hpp
+
+1588278156 c:\users\vuk\documents\github\projekat\sportskicentar.hpp
+	"Osoba.hpp"
+
+1588278502 c:\users\vuk\documents\github\projekat\osoba.hpp
 
