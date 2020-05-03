@@ -18,7 +18,7 @@ using namespace std;
 
 int main()
 {
-    SportskiCentar sc;
+    /*SportskiCentar sc;
     cout << "Broj zaposlenih je " << sc.getBrojZaposlenih() << endl;
 
     Osoba noviZaposleni("Vuk", "Vicentic", musko, "08.05.2003", 0);
@@ -30,9 +30,12 @@ int main()
     cout << "Saldo na racunu je " << noviZaposleni.getSaldo() << endl;
     noviZaposleni.povecajSaldo(100);
     cout << "Novi saldo na racunu je " << noviZaposleni.getSaldo() << endl;
+    */
 
     //isplata plate treba da smanji saldo na racunu kompanije i da poveca saldo na racunu osobe
     //ovde treba da kompaniji dodamo novi objekat saldo tipa double, i funckionalnost (metodu) na SportskomCentru isplataPlate (Osoba, double)
     // i metod na klasi Osoba uplataclanarine(SporstkiCentar, double )
 
+    Rekreativac r("", "", musko, ".", 0, true);
+    r.ispisFajla();
 }

@@ -37,6 +37,7 @@
 		<Unit filename="Kompanija.hpp" />
 		<Unit filename="Osoba.hpp" />
 		<Unit filename="Rekreativac.hpp" />
+		<Unit filename="Rekreativac.txt" />
 		<Unit filename="Sponzor.hpp" />
 		<Unit filename="SportskiCentar.hpp" />
 		<Unit filename="SportskiObjekat.hpp" />

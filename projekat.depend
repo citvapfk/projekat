@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1588506932 source:c:\users\vuk\documents\github\projekat\main.cpp
+1588516447 source:c:\users\vuk\documents\github\projekat\main.cpp
 	<iostream>
 	"SportskiObjekat.hpp"
 	"Teretana.hpp"
@@ -30,7 +30,8 @@
 
 1587902689 c:\users\vuk\documents\github\projekat\trener.hpp
 
-1588508359 c:\users\vuk\documents\github\projekat\rekreativac.hpp
+1588517045 c:\users\vuk\documents\github\projekat\rekreativac.hpp
+	"fstream"
 
 1587902693 c:\users\vuk\documents\github\projekat\sponzor.hpp
 
