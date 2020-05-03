@@ -3,10 +3,18 @@
 using namespace std;
 
 #include "SportskiObjekat.hpp"
+#include "Teretana.hpp"
 #include "Bazen.hpp"
 #include "Kompanija.hpp"
 #include "SportskiCentar.hpp"
 #include "Osoba.hpp"
+#include "Igrac.hpp"
+#include "Trener.hpp"
+#include "Rekreativac.hpp"
+#include "Sponzor.hpp"
+#include "Ugovor.hpp"
+
+
 
 int main()
 {

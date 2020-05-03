@@ -5,11 +5,10 @@
 
 class SportskiCentar: public Kompanija
 {
-private:
-    int brojZaposlenih;
 protected:
     SportskiObjekat objekti[10];
     Osoba zaposleni[20];
+    int brojZaposlenih;
 public:
 
     SportskiCentar(): Kompanija(), objekti({ SportskiObjekat() }), zaposleni({ }), brojZaposlenih(0) {};

@@ -8,7 +8,6 @@ protected:
     int ugovor;
     int plata;
 public:
-    igrac
 };
 
 #endif // IGRAC_H_INCLUDED

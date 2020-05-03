@@ -5,6 +5,9 @@ class Rekreativac: public Osoba
 {
 protected:
     bool clan;
+public:
+
+
 };
 
 
