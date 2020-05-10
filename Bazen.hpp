@@ -22,6 +22,8 @@ public:
     void setSirina(double s){sirina=s;}
     void setDubina(double d){dubina=d;}
     void setTemperaturaVode(double t){temperaturaVode=t;}
+
+
 };
 
 #endif // BAZEN_H_INCLUDED

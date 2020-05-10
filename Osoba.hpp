@@ -45,6 +45,16 @@ public:
         saldo = saldo - iznos;
     }
 
+    friend ostream& operator<<(ostream& izlaz, const Osoba& o){
+        izlaz<<"Osoba: "<<endl;
+        izlaz<<"Ime: "<<o.ime<<endl;
+        izlaz<<"Prezime: "<<o.prezime<<endl;
+        if(o.pol==musko){izlaz<<"Pol: musko"<<endl;}
+        if(o.pol==zensko){izlaz<<"Pol: zensko"<<endl;}
+        izlaz<<"Datum rodjenja: "<<o.datumRodjenja<<endl;
+        izlaz<<"Saldo: "<<o.saldo<<" dinara"<<endl;
+        return izlaz;
+    }
 };
 
 #endif // OSOBA_H_INCLUDED

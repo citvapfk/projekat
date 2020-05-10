@@ -36,6 +36,18 @@ int main()
     //ovde treba da kompaniji dodamo novi objekat saldo tipa double, i funckionalnost (metodu) na SportskomCentru isplataPlate (Osoba, double)
     // i metod na klasi Osoba uplataclanarine(SporstkiCentar, double )
 
-    Rekreativac r("", "", musko, ".", 0, true);
+    /*Rekreativac r("", "", musko, ".", 0, true);
     r.ispisFajla();
+    */
+
+    Osoba o("Vuk", "Vicentic", musko, "08.05.2003", 500);
+    cout<<o<<endl;
+    SportskiObjekat s;
+    cout<<s<<endl;
+    Kompanija k;
+    cout<<k<<endl;
+
+    Bazen b;
+    Bazen b2;
+    cout<<b2.getBrojObjekata();
 }

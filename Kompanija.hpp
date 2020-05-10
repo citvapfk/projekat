@@ -18,6 +18,14 @@ public:
         delatnost=d;
         adresa=a;
     }
+
+    friend ostream& operator<<(ostream& izlaz, const Kompanija& k){
+        izlaz<<"Kompanija: "<<endl;
+        izlaz<<"Ime: "<<k.ime<<endl;
+        izlaz<<"Delatnost: "<<k.delatnost<<endl;
+        izlaz<<"Adresa: "<<k.adresa<<endl;
+        return izlaz;
+    }
 };
 
 #endif // KOMPANIJA_HPP_INCLUDED
