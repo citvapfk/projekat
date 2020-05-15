@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589114247 source:c:\users\vuk\documents\github\projekat\main.cpp
+1589570718 source:c:\users\vuk\documents\github\projekat\main.cpp
 	<iostream>
 	"SportskiObjekat.hpp"
 	"Teretana.hpp"
@@ -12,6 +12,7 @@
 	"Rekreativac.hpp"
 	"Sponzor.hpp"
 	"Ugovor.hpp"
+	"Tim.hpp"
 
 1589114067 c:\users\vuk\documents\github\projekat\sportskiobjekat.hpp
 
@@ -22,18 +23,21 @@
 1588507016 c:\users\vuk\documents\github\projekat\sportskicentar.hpp
 	"Osoba.hpp"
 
-1589112702 c:\users\vuk\documents\github\projekat\osoba.hpp
+1589569652 c:\users\vuk\documents\github\projekat\osoba.hpp
 
 1587902691 c:\users\vuk\documents\github\projekat\teretana.hpp
 
-1588506947 c:\users\vuk\documents\github\projekat\igrac.hpp
+1589569758 c:\users\vuk\documents\github\projekat\igrac.hpp
 
-1587902689 c:\users\vuk\documents\github\projekat\trener.hpp
+1589570911 c:\users\vuk\documents\github\projekat\trener.hpp
 
-1589114394 c:\users\vuk\documents\github\projekat\rekreativac.hpp
+1589569904 c:\users\vuk\documents\github\projekat\rekreativac.hpp
 	"fstream"
 
 1587902693 c:\users\vuk\documents\github\projekat\sponzor.hpp
 
 1587902683 c:\users\vuk\documents\github\projekat\ugovor.hpp
+
+1589571058 c:\users\vuk\documents\github\projekat\tim.hpp
+	<vector>
 

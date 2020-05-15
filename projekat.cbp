@@ -42,6 +42,7 @@
 		<Unit filename="SportskiCentar.hpp" />
 		<Unit filename="SportskiObjekat.hpp" />
 		<Unit filename="Teretana.hpp" />
+		<Unit filename="Tim.hpp" />
 		<Unit filename="Trener.hpp" />
 		<Unit filename="Ugovor.hpp" />
 		<Unit filename="main.cpp" />

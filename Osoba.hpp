@@ -55,6 +55,12 @@ public:
         izlaz<<"Saldo: "<<o.saldo<<" dinara"<<endl;
         return izlaz;
     }
+
+    virtual void predstaviSe(){
+        cout<<"Zovem se "<<ime<<" "<<prezime<<endl;
+    };
+
+    virtual int bonus(){return 0;}
 };
 
 #endif // OSOBA_H_INCLUDED

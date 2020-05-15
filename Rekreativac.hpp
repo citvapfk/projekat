@@ -31,7 +31,13 @@ public:
         citajTxt("Rekreativac.txt");
     }
 
+    void predstaviSe(){
+        Osoba::predstaviSe();
+    }
 
+    int bonus(){
+        return Osoba::bonus();
+    }
 };
 
 
