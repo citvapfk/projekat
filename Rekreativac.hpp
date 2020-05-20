@@ -24,8 +24,9 @@ class Rekreativac: public Osoba
 {
 protected:
     bool clan;
+    SportskiCentar centar;
 public:
-    Rekreativac(string i, string p, poll po, string dat, double sal, bool cl ):Osoba(i, p, po, dat, sal), clan(cl){};
+    Rekreativac(string i, string p, poll po, string dat, double sal, bool cl, SportskiCentar c):Osoba(i, p, po, dat, sal), clan(cl), centar(c){};
 
     void ispisFajla(){
         citajTxt("Rekreativac.txt");
@@ -37,6 +38,11 @@ public:
 
     int bonus(){
         return Osoba::bonus();
+    }
+
+    void isplataClanarine(){
+        smanjiSaldo(2000);
+        centar.povecajSaldo(2000);
     }
 };
 

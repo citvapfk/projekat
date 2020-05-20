@@ -12,7 +12,7 @@ protected:
 public:
 
     SportskiCentar(): Kompanija(), objekti({ SportskiObjekat() }), zaposleni({ }), brojZaposlenih(0) {};
-    SportskiCentar(string imeKompanije, string delatnost, string adresa, SportskiObjekat sportskiObjekti[10], Osoba zaposlenoOsoblje[]):Kompanija(imeKompanije, delatnost, adresa), objekti(), zaposleni() {
+    SportskiCentar(string imeKompanije, string delatnost, string adresa, int saldo, SportskiObjekat sportskiObjekti[10], Osoba zaposlenoOsoblje[]):Kompanija(imeKompanije, delatnost, adresa, saldo), objekti(), zaposleni() {
                 for (int i = 0; i<10; i++) { objekti[i] = sportskiObjekti[i];}
                 for (int i = 0; i<20; i++) { zaposleni[i] = zaposlenoOsoblje[i];}
             };

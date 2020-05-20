@@ -8,12 +8,18 @@ protected:
     string ime;
     Trener trener;
     vector<Igrac*> igraci;
+    int saldo
+    SportskiCentar centar;
 public:
-    Tim(string i, Trener t)
+    Tim(string i, Trener t, int s, SportskiCentar c)
     {
         ime=i;
         trener=t;
+        saldo=s;
+        centar=c
     }
+
+    int getIme(){return ime.}
 
     void dodajIgraca(Igrac* i)
     {
@@ -46,6 +52,19 @@ public:
             if((*it)->getBrPobeda()>15)
                 (*it)->predstaviSe();
         }
+    }
+
+    double povecajSaldo(double iznos) {
+        saldo = saldo + iznos;
+    }
+
+    double smanjiSaldo(double iznos) {
+        saldo = saldo - iznos;
+    }
+
+    void isplataFinansija(double iznos){
+        povecajSaldo(iznos);
+        centar.smanjiSaldo(iznos);
     }
 };
 

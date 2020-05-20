@@ -7,16 +7,19 @@ protected:
     string ime;
     string delatnost;
     string adresa;
+    int saldo;
 public:
     Kompanija(){
         ime="";
         delatnost="";
         adresa="";
+        saldo=0;
     }
-    Kompanija(string i, string d, string a){
+    Kompanija(string i, string d, string a, int s){
         ime=i;
         delatnost=d;
         adresa=a;
+        saldo=s;
     }
 
     friend ostream& operator<<(ostream& izlaz, const Kompanija& k){
@@ -25,6 +28,14 @@ public:
         izlaz<<"Delatnost: "<<k.delatnost<<endl;
         izlaz<<"Adresa: "<<k.adresa<<endl;
         return izlaz;
+    }
+
+    double povecajSaldo(double iznos) {
+        saldo = saldo + iznos;
+    }
+
+    double smanjiSaldo(double iznos) {
+        saldo = saldo - iznos;
     }
 };
 

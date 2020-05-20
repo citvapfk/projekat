@@ -50,7 +50,7 @@ int main()
     Bazen b;
     Bazen b2;
     cout<<b2.getBrojObjekata();
-    */
+
 
     Igrac i("Vuk", "Vicentic", musko, "8.5.2003.", 500, "kosarka", 500, "centar", 378, 29);
     i.predstaviSe();
@@ -83,4 +83,7 @@ int main()
     cout<<"Broj igraca je "<<  tim.brojIgraca() <<endl;
     cout<<"Svi igraci u timu posle brisanja jednog igraca"<<endl;
     tim.ispisIgraca();
+    */
+
+
 }
