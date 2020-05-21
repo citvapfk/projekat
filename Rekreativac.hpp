@@ -40,9 +40,9 @@ public:
         return Osoba::bonus();
     }
 
-    void isplataClanarine(){
-        smanjiSaldo(2000);
-        centar.povecajSaldo(2000);
+    void isplataClanarine(double iznos){
+        smanjiSaldo(iznos);
+        centar.povecajSaldo(iznos);
     }
 };
 

@@ -1,6 +1,8 @@
 #ifndef TIM_HPP_INCLUDED
 #define TIM_HPP_INCLUDED
 #include <vector>
+#include "Trener.hpp"
+//#include "Igrac.hpp"
 
 class Tim
 {
@@ -8,18 +10,24 @@ protected:
     string ime;
     Trener trener;
     vector<Igrac*> igraci;
-    int saldo
-    SportskiCentar centar;
+    double saldo;
+   // SportskiCentar centar;
 public:
-    Tim(string i, Trener t, int s, SportskiCentar c)
+    Tim(){
+        ime="";
+        trener=Trener();
+        saldo=0;
+        //centar=SportskiCentar();
+    }
+    Tim(string i, Trener t, double s/*, SportskiCentar c*/)
     {
         ime=i;
         trener=t;
         saldo=s;
-        centar=c
+        //centar=c;
     }
 
-    int getIme(){return ime.}
+    string getIme(){return ime;}
 
     void dodajIgraca(Igrac* i)
     {

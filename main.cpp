@@ -86,4 +86,12 @@ int main()
     */
 
 
+    SportskiCentar sc;
+    sc.setSaldo(100000000);
+    Trener trener("Andrea", "Trijkijeri", musko, "3.5.1978.", 800000, "kosarka", 10, 150000, 28);
+    Tim tim("Partizan", trener, 100000, sc);
+    tim.isplataFinansija(50000);
+    cout<<"Saldo centra je "<<sc.getSaldo()<<endl;
+
+
 }

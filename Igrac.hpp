@@ -1,5 +1,7 @@
 #ifndef IGRAC_H_INCLUDED
 #define IGRAC_H_INCLUDED
+#include "Tim.hpp"
+
 
 class Igrac: public Osoba
 {
@@ -9,9 +11,9 @@ protected:
     string pozicija;
     int brPoena;
     int brPobeda;
-    Tim tim;
+   // Tim tim;
 public:
-    Igrac(string i, string p, poll po, string dat, double sal, string sprt, int plt, string poz, int poena, int pobeda, Tim t):Osoba(i, p, po, dat, sal), sport(sprt), plata(plt), pozicija(poz), brPoena(poena), brPobeda(pobeda), tim(t){};
+    Igrac(string i, string p, poll po, string dat, double sal, string sprt, int plt, string poz, int poena, int pobeda/*, Tim t*/):Osoba(i, p, po, dat, sal), sport(sprt), plata(plt), pozicija(poz), brPoena(poena), brPobeda(pobeda)/*, tim(t)*/{};
 
     int getBrPobeda(){return brPobeda;}
 
