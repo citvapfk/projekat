@@ -115,7 +115,7 @@ int main()
     cout << "Trener ima saldo " << trener.getSaldo() << endl;
 
     Sponzor sponzor;
-    sponzor.povecajSaldo(10000000000);   //povecavamo sadlo da bi imao srestva za donji ugovor
+    sponzor.povecajSaldo(10000000000);   //povecavamo saldo da bi imao sredstva za donji ugovor
     sponzor.setNacinReklame("reklama na dresovima");
 
     cout << "Sada pravimo ugovor o sponzorstvu izmedju sportskog centra i sponzora" << endl;
@@ -133,14 +133,16 @@ int main()
     tim.dodajIgracaIzTxt("Igraci.txt");
     cout << "Broj igraca u timu posle ucitavanja je " << tim.brojIgraca() << endl;
 
-    cout << "Sada isplacujemo place svim igracima" << endl;
+    tim.ispisiSaldaIgracaUtxt("salda_pre_isplate_plata.txt");
+
+    cout << "Sada isplacujemo plate svim igracima" << endl;
     tim.isplataPlataSvimIgracima();
+    
 
-
-   //TODO: ucitas sve igrace iz Igraci.txt u tim
-   //TODO: napravis metod isplatiIgracimaPlate
-   //TODO: napravis metod isplatiIgracimaBonuse
-   //TODO: Kreiras fajl sa saldima svih igraca posle isplate
+    tim.ispisiSaldaIgracaUtxt("salda_posle_isplate_plata.txt");
+    cout << "Sada isplacujemo bonuse svim igracima" << endl;
+    tim.isplataBonusaSvimIgracima();
+    tim.ispisiSaldaIgracaUtxt("salda_posle_isplate_bonusa.txt");
 
 
 }

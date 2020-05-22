@@ -49,6 +49,9 @@
 		<Unit filename="Ugovor.hpp" />
 		<Unit filename="fajl.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="salda_posle_isplate_bonusa.txt" />
+		<Unit filename="salda_posle_isplate_plata.txt" />
+		<Unit filename="salda_pre_isplate_plata.txt" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

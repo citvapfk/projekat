@@ -19,6 +19,10 @@ public:
 
     double getPlata() { return plata;}
     void setPlata(double p) {plata = p;}
+    void setSport(string s) {sport = s;}
+    void setPozicija(string p){pozicija=p;}
+    void setBrPoena(int bp){brPoena=bp;}
+    void setBrPobeda(int bp){brPobeda=bp;}
 
 
     void predstaviSe(){

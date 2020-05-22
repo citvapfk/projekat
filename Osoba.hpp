@@ -45,7 +45,10 @@ public:
     void setPrezime(string p) { prezime = p; }
 
     double getSaldo() { return saldo; }
-    void setSaldo(double s) { saldo = s;}
+    void setSaldo(double s){saldo=s;}
+    void setDatumRodjenja(string d) { datumRodjenja = d;}
+
+    
 
     void povecajSaldo(double iznos)
     {

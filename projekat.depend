@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590168942 source:c:\users\vuk\documents\github\projekat\main.cpp
+1590175156 source:c:\users\vuk\documents\github\projekat\main.cpp
 	<iostream>
 	"SportskiObjekat.hpp"
 	"Teretana.hpp"
@@ -14,44 +14,44 @@
 	"Sponzor.hpp"
 	"Ugovor.hpp"
 
-1590051542 c:\users\vuk\documents\github\projekat\sportskiobjekat.hpp
+1590137382 c:\users\vuk\documents\github\projekat\sportskiobjekat.hpp
 
-1590051542 c:\users\vuk\documents\github\projekat\bazen.hpp
+1590137382 c:\users\vuk\documents\github\projekat\bazen.hpp
 
-1590092268 c:\users\vuk\documents\github\projekat\kompanija.hpp
+1590137382 c:\users\vuk\documents\github\projekat\kompanija.hpp
 
-1590092942 c:\users\vuk\documents\github\projekat\sportskicentar.hpp
+1590137382 c:\users\vuk\documents\github\projekat\sportskicentar.hpp
 	"Osoba.hpp"
 	"Tim.hpp"
 
-1590168153 c:\users\vuk\documents\github\projekat\osoba.hpp
+1590173578 c:\users\vuk\documents\github\projekat\osoba.hpp
 	"Pol.hpp"
 
-1590051542 c:\users\vuk\documents\github\projekat\teretana.hpp
+1590137382 c:\users\vuk\documents\github\projekat\teretana.hpp
 
-1590169393 c:\users\vuk\documents\github\projekat\igrac.hpp
+1590173856 c:\users\vuk\documents\github\projekat\igrac.hpp
 
-1590093482 c:\users\vuk\documents\github\projekat\trener.hpp
+1590137382 c:\users\vuk\documents\github\projekat\trener.hpp
 	"Osoba.hpp"
 
-1590140667 c:\users\vuk\documents\github\projekat\rekreativac.hpp
+1590137382 c:\users\vuk\documents\github\projekat\rekreativac.hpp
 	"fajl.hpp"
 
-1590094364 c:\users\vuk\documents\github\projekat\sponzor.hpp
+1590137382 c:\users\vuk\documents\github\projekat\sponzor.hpp
 
-1590096420 c:\users\vuk\documents\github\projekat\ugovor.hpp
+1590137382 c:\users\vuk\documents\github\projekat\ugovor.hpp
 
-1590169682 c:\users\vuk\documents\github\projekat\tim.hpp
+1590174632 c:\users\vuk\documents\github\projekat\tim.hpp
 	<vector>
 	"Igrac.hpp"
-	"fajl.hpp"
 	<string>
 	<sstream>
 	<iostream>
 	<stdlib.h>
+	"fstream"
 
-1590091962 c:\users\vuk\documents\github\projekat\pol.hpp
+1590137382 c:\users\vuk\documents\github\projekat\pol.hpp
 
-1590140657 c:\users\vuk\documents\github\projekat\fajl.hpp
+1590170320 c:\users\vuk\documents\github\projekat\fajl.hpp
 	"fstream"
 

@@ -1,5 +1,7 @@
 #ifndef FAJL_HPP_INCLUDED
 #define FAJL_HPP_INCLUDED
+
+using namespace std;
 #include "fstream"
 
 void pisiTxt(string nazivFajla, string tekst, char mode='w')
