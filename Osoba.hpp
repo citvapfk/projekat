@@ -1,66 +1,86 @@
 #ifndef OSOBA_H_INCLUDED
 #define OSOBA_H_INCLUDED
+#include "Pol.hpp"
 
-enum poll {musko, zensko};
 
 class Osoba
 {
 protected:
     string ime;
     string prezime;
-    poll pol;
+    pol poll;
     string datumRodjenja;
     double saldo;
+
 public:
-    Osoba(){
-        ime="";
-        prezime="";
-        pol=musko;
-        datumRodjenja="";
-        saldo=0;
+    Osoba()
+    {
+        ime = "";
+        prezime = "";
+        poll = musko;
+        datumRodjenja = "";
+        saldo = 0;
     }
-    Osoba(string i, string p, poll po, string dat, double sal){
-        ime=i;
-        prezime=p;
-        pol=po;
-        datumRodjenja=dat;
+    Osoba(string i, string p, pol po, string dat, double sal)
+    {
+        ime = i;
+        prezime = p;
+        poll = po;
+        datumRodjenja = dat;
         saldo = sal;
     }
-    Osoba(const Osoba& o){
-        ime=o.ime;
-        prezime=o.prezime;
-        pol=o.pol;
-        datumRodjenja=o.datumRodjenja;
+    Osoba(const Osoba &o)
+    {
+        ime = o.ime;
+        prezime = o.prezime;
+        poll = o.poll;
+        datumRodjenja = o.datumRodjenja;
         saldo = o.saldo;
     }
 
-    string getIme() {return ime;}
-    double getSaldo() {return saldo;}
+    string getIme() { return ime; }
+    void setIme(string i) { ime = i; }
 
-    double povecajSaldo(double iznos) {
+    string getPrezime() { return prezime; }
+    void setPrezime(string p) { prezime = p; }
+
+    double getSaldo() { return saldo; }
+    void setSaldo(double s) { saldo = s;}
+
+    void povecajSaldo(double iznos)
+    {
         saldo = saldo + iznos;
     }
 
-    double smanjiSaldo(double iznos) {
+    void smanjiSaldo(double iznos)
+    {
         saldo = saldo - iznos;
     }
 
-    friend ostream& operator<<(ostream& izlaz, const Osoba& o){
-        izlaz<<"Osoba: "<<endl;
-        izlaz<<"Ime: "<<o.ime<<endl;
-        izlaz<<"Prezime: "<<o.prezime<<endl;
-        if(o.pol==musko){izlaz<<"Pol: musko"<<endl;}
-        if(o.pol==zensko){izlaz<<"Pol: zensko"<<endl;}
-        izlaz<<"Datum rodjenja: "<<o.datumRodjenja<<endl;
-        izlaz<<"Saldo: "<<o.saldo<<" dinara"<<endl;
+    friend ostream &operator<<(ostream &izlaz, const Osoba &o)
+    {
+        izlaz << "Osoba: " << endl;
+        izlaz << "Ime: " << o.ime << endl;
+        izlaz << "Prezime: " << o.prezime << endl;
+        if (o.poll == musko)
+        {
+            izlaz << "Pol: musko" << endl;
+        }
+        if (o.poll == zensko)
+        {
+            izlaz << "Pol: zensko" << endl;
+        }
+        izlaz << "Datum rodjenja: " << o.datumRodjenja << endl;
+        izlaz << "Saldo: " << o.saldo << " dinara" << endl;
         return izlaz;
     }
 
-    virtual void predstaviSe(){
-        cout<<"Zovem se "<<ime<<" "<<prezime<<endl;
+    virtual void predstaviSe()
+    {
+        cout << "Zovem se " << ime << " " << prezime << endl;
     };
 
-    virtual int bonus(){return 0;}
+    virtual double bonus() { return 0; }
 };
 
 #endif // OSOBA_H_INCLUDED

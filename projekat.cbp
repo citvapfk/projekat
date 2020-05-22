@@ -34,8 +34,10 @@
 		</Compiler>
 		<Unit filename="Bazen.hpp" />
 		<Unit filename="Igrac.hpp" />
+		<Unit filename="Igraci.txt" />
 		<Unit filename="Kompanija.hpp" />
 		<Unit filename="Osoba.hpp" />
+		<Unit filename="Pol.hpp" />
 		<Unit filename="Rekreativac.hpp" />
 		<Unit filename="Rekreativac.txt" />
 		<Unit filename="Sponzor.hpp" />
@@ -45,6 +47,7 @@
 		<Unit filename="Tim.hpp" />
 		<Unit filename="Trener.hpp" />
 		<Unit filename="Ugovor.hpp" />
+		<Unit filename="fajl.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

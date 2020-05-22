@@ -1,24 +1,6 @@
 #ifndef REKREATIVAC_H_INCLUDED
 #define REKREATIVAC_H_INCLUDED
-#include "fstream"
-
-void citajTxt(string Rekreativac)
-{
-    string linija;
-    ifstream fajl (Rekreativac);
-    if (fajl.is_open())
-    {
-        while ( getline (fajl,linija) )
-        {
-            cout << linija << '\n';
-        }
-        fajl.close();
-    }
-
-    else
-        cout << "Neuspesno otvoren fajl";
-
-}
+#include "fajl.hpp"
 
 class Rekreativac: public Osoba
 {
@@ -26,7 +8,7 @@ protected:
     bool clan;
     SportskiCentar centar;
 public:
-    Rekreativac(string i, string p, poll po, string dat, double sal, bool cl, SportskiCentar c):Osoba(i, p, po, dat, sal), clan(cl), centar(c){};
+    Rekreativac(string i, string p, pol po, string dat, double sal, bool cl, SportskiCentar c):Osoba(i, p, po, dat, sal), clan(cl), centar(c){};
 
     void ispisFajla(){
         citajTxt("Rekreativac.txt");
@@ -36,7 +18,7 @@ public:
         Osoba::predstaviSe();
     }
 
-    int bonus(){
+    double bonus(){
         return Osoba::bonus();
     }
 

@@ -1,6 +1,6 @@
 #ifndef FAJL_HPP_INCLUDED
 #define FAJL_HPP_INCLUDED
-
+#include "fstream"
 
 void pisiTxt(string nazivFajla, string tekst, char mode='w')
 {
@@ -41,7 +41,7 @@ void citajTxt(string nazivFajla)
         cout << "Neuspesno otvoren fajl";
 
 }
-int main ()
+/*int main ()
 {
     string nasFajl = "nazivFajla.txt";
 
@@ -63,5 +63,5 @@ int main ()
 
     return 0;
 }
-
+*/
 #endif // FAJL_HPP_INCLUDED

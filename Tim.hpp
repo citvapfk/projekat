@@ -1,33 +1,31 @@
 #ifndef TIM_HPP_INCLUDED
 #define TIM_HPP_INCLUDED
 #include <vector>
-#include "Trener.hpp"
-//#include "Igrac.hpp"
+#include "Igrac.hpp"
+#include "fajl.hpp"
+#include <string>
+#include <sstream>
+#include <iostream>
+#include <stdlib.h>
+
 
 class Tim
 {
 protected:
     string ime;
-    Trener trener;
+    Trener* trener;
     vector<Igrac*> igraci;
     double saldo;
-   // SportskiCentar centar;
 public:
-    Tim(){
-        ime="";
-        trener=Trener();
-        saldo=0;
-        //centar=SportskiCentar();
-    }
-    Tim(string i, Trener t, double s/*, SportskiCentar c*/)
+    Tim(string i, Trener* t, double s)
     {
         ime=i;
         trener=t;
         saldo=s;
-        //centar=c;
     }
 
     string getIme(){return ime;}
+    double getSaldo() {return saldo;}
 
     void dodajIgraca(Igrac* i)
     {
@@ -62,18 +60,75 @@ public:
         }
     }
 
-    double povecajSaldo(double iznos) {
+    void povecajSaldo(double iznos) {
         saldo = saldo + iznos;
     }
 
-    double smanjiSaldo(double iznos) {
+    void smanjiSaldo(double iznos) {
         saldo = saldo - iznos;
     }
 
-    void isplataFinansija(double iznos){
-        povecajSaldo(iznos);
-        centar.smanjiSaldo(iznos);
+    bool isplatiTreneruPlatu() {
+        if (saldo < trener->getPlata()) {
+            cout << "Tim " << ime << " nema sredstava da isplati treneru platu" << endl;
+            return false;
+        }
+        smanjiSaldo(trener->getPlata());
+        trener->povecajSaldo(trener->getPlata());
+        return true;
     }
+
+    bool isplatiTreneruBonus() {
+        if (saldo < trener->bonus()) {
+            cout << "Tim " << ime << " nema sredstava da isplati treneru bonus" << endl;
+            return false;
+        }
+        smanjiSaldo(trener->bonus());
+        trener->povecajSaldo(trener->bonus());
+        return true;
+    }
+
+    void dodajIgracaIzTxt(string nazivFajla)
+    {
+        string linija;
+        ifstream fajl (nazivFajla);
+        if (fajl.is_open())
+        {
+            while ( getline (fajl,linija) )
+            {
+                Igrac igrac;
+                stringstream ss(linija);
+                int i=0;
+                while(ss.good()){
+                    string substr;
+                    getline(ss, substr, ',');
+                    if (i == 0) igrac.setIme(substr);
+                    if (i == 1) igrac.setPrezime(substr);
+                    if (i == 4) igrac.setSaldo(atof(substr.c_str()));
+                    if (i == 6) igrac.setPlata(atof(substr.c_str()));
+                    i++;
+                }
+                igrac.predstaviSe();
+                dodajIgraca(&igrac);
+            }
+            fajl.close();
+        }
+    }
+
+    bool isplataPlataSvimIgracima() {
+        for (auto it=igraci.begin(); it!=igraci.end(); it++) {
+            double plata = (*it)->getPlata();
+            cout << "Plata je" << plata << endl;
+            (*it)->povecajSaldo(plata);
+             //smanjiSaldo(plata);
+             cout << (*it)->getIme() << " " <<  (*it)->getPrezime()  << ", novi saldo je" << (*it)->getSaldo()   << endl;
+        }
+
+
+        return true;
+    }
+
+
 };
 
 #endif // TIM_HPP_INCLUDED

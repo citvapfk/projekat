@@ -33,11 +33,11 @@ public:
         return izlaz;
     }
 
-    double povecajSaldo(double iznos) {
+    void povecajSaldo(double iznos) {
         saldo = saldo + iznos;
     }
 
-    double smanjiSaldo(double iznos) {
+    void smanjiSaldo(double iznos) {
         saldo = saldo - iznos;
     }
 };

@@ -2,6 +2,7 @@
 #define SPORTSKICENTAR_H_INCLUDED
 
 #include "Osoba.hpp"
+#include "Tim.hpp"
 
 class SportskiCentar: public Kompanija
 {
@@ -24,12 +25,20 @@ public:
         zaposleni[brojZaposlenih++]=novi;
     }
 
-
-
-
-
     //SportskiCentar(const SportskiCentar& s):SportskiObjekat(s):Osoba(s);
     //SportskiCentar(const SportskiObjekat& s, const Osoba& o);
+
+    bool isplataFinansija(Tim* tim, double iznos) {
+        if (saldo < iznos) {
+            cout << "Isplata ne moze da se uradi, nema sredstava na racunu" << endl;
+            return false;
+        }
+
+        smanjiSaldo(iznos);
+        tim->povecajSaldo(iznos);
+        return true;
+    }
+
 };
 
 #endif // SPORTSKICENTAR_H_INCLUDED

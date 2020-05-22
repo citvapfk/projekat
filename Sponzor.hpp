@@ -5,7 +5,11 @@ class Sponzor: public Kompanija
 {
 protected:
     string nacinReklame;
-    int pare;
+public:
+    Sponzor() : Kompanija() {};
+
+    void setNacinReklame(string nr) { nacinReklame = nr;};
+    string getNacinReklame() { return nacinReklame; }
 };
 
 #endif // SPONZOR_H_INCLUDED

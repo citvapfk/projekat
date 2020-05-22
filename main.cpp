@@ -6,15 +6,14 @@ using namespace std;
 #include "Teretana.hpp"
 #include "Bazen.hpp"
 #include "Kompanija.hpp"
+#include "Trener.hpp"
+#include "Igrac.hpp"
+#include "Tim.hpp"
 #include "SportskiCentar.hpp"
 #include "Osoba.hpp"
-#include "Igrac.hpp"
-#include "Trener.hpp"
 #include "Rekreativac.hpp"
 #include "Sponzor.hpp"
 #include "Ugovor.hpp"
-#include "Tim.hpp"
-
 
 int main()
 {
@@ -85,13 +84,63 @@ int main()
     tim.ispisIgraca();
     */
 
+    SportskiCentar sportskiCentar;
+    sportskiCentar.setSaldo(250000.0);
+    Trener trener("Andrea", "Trijkijeri", musko, "3.5.1978.", 800000, "kosarka", 10, 150000.0, 28);
+    Tim tim("Partizan", &trener, 100000.0);
 
-    SportskiCentar sc;
-    sc.setSaldo(100000000);
-    Trener trener("Andrea", "Trijkijeri", musko, "3.5.1978.", 800000, "kosarka", 10, 150000, 28);
-    Tim tim("Partizan", trener, 100000, sc);
-    tim.isplataFinansija(50000);
-    cout<<"Saldo centra je "<<sc.getSaldo()<<endl;
+    cout << "Sportski centar ima saldo " << sportskiCentar.getSaldo() << " dinara" << endl;
+    cout << "Sportski tim " << tim.getIme() << " ima saldo " << tim.getSaldo() << " dinara"  << endl;
+
+    cout << "Sada sc isplacuje finasije timu od 140000 dinara..." << endl;
+    sportskiCentar.isplataFinansija(&tim, 140000.0);
+    cout << "Sportski centar ima saldo " << sportskiCentar.getSaldo() << " dinara" << endl;
+    cout << "Sportski tim " << tim.getIme() << " ima saldo " << tim.getSaldo() << " dinara"  << endl;
+
+    cout << "Sada sc opet isplacuje finasije timu od 140000 dinara..." << endl;
+    sportskiCentar.isplataFinansija(&tim, 140000.0);
+    cout << "Sportski centar ima saldo " << sportskiCentar.getSaldo() << " dinara" << endl;
+    cout << "Sportski tim " << tim.getIme() << " ima saldo " << tim.getSaldo() << " dinara"  << endl;
+
+    cout << "Trener ima platu " << trener.getPlata() << endl;
+    cout << "Trener ima saldo " << trener.getSaldo() << endl;
+    cout << "Sada klub isplacuje platu treneru..." << endl;
+    tim.isplatiTreneruPlatu();
+    cout << "Sportski tim " << tim.getIme() << " ima saldo " << tim.getSaldo() << " dinara"  << endl;
+    cout << "Trener ima saldo " << trener.getSaldo() << endl;
+
+    cout << "Sada klub isplacuje jos jednu platu treneru..." << endl;
+    tim.isplatiTreneruPlatu();
+    cout << "Sportski tim " << tim.getIme() << " ima saldo " << tim.getSaldo() << " dinara"  << endl;
+    cout << "Trener ima saldo " << trener.getSaldo() << endl;
+
+    Sponzor sponzor;
+    sponzor.povecajSaldo(10000000000);   //povecavamo sadlo da bi imao srestva za donji ugovor
+    sponzor.setNacinReklame("reklama na dresovima");
+
+    cout << "Sada pravimo ugovor o sponzorstvu izmedju sportskog centra i sponzora" << endl;
+    cout << "Sportski centar pre sponzorstva ima saldo " << sportskiCentar.getSaldo() << " dinara" << endl;
+    Ugovor ugovor(&sponzor, &sportskiCentar, 3, 100000000);
+    ugovor.realizujUgovor();
+    cout << "Sportski centar posle sponzorstva ima saldo " << sportskiCentar.getSaldo() << " dinara" << endl;
+
+    sportskiCentar.isplataFinansija(&tim, ugovor.getIznos());
+    cout << "Sportski tim " << tim.getIme() << " ima saldo " << tim.getSaldo() << " dinara"  << endl;
+
+    tim.isplatiTreneruBonus();
+
+    cout << "Broj igraca u timu pre ucitavanja je " << tim.brojIgraca() << endl;
+    tim.dodajIgracaIzTxt("Igraci.txt");
+    cout << "Broj igraca u timu posle ucitavanja je " << tim.brojIgraca() << endl;
+
+    cout << "Sada isplacujemo place svim igracima" << endl;
+    tim.isplataPlataSvimIgracima();
+
+
+   //TODO: ucitas sve igrace iz Igraci.txt u tim
+   //TODO: napravis metod isplatiIgracimaPlate
+   //TODO: napravis metod isplatiIgracimaBonuse
+   //TODO: Kreiras fajl sa saldima svih igraca posle isplate
 
 
 }
