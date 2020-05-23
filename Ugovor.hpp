@@ -4,21 +4,27 @@
 class Ugovor
 {
 protected:
-    Sponzor* sponzor;
-    SportskiCentar* sportskiCentar;
+    Sponzor *sponzor;
+    SportskiCentar *sportskiCentar;
     int duzina;
     double iznos;
+
 public:
-    Ugovor(Sponzor* sp, SportskiCentar* sc, int duz, double izn) {
+    Ugovor() {}
+    Ugovor(Sponzor *sp, SportskiCentar *sc, int duz, double izn)
+    {
         sponzor = sp;
         sportskiCentar = sc;
         duzina = duz;
         iznos = izn;
     };
-    double getIznos() { return iznos;}
+    double getIznos() { return iznos; }
+    void setIznos(double i) { iznos = i; }
 
-    bool realizujUgovor() {
-        if (sponzor->getSaldo() < iznos) {
+    bool realizujUgovor()
+    {
+        if (sponzor->getSaldo() < iznos)
+        {
             cout << "Sponzor nema sredstava da realzuje ugovor" << endl;
             return false;
         }
@@ -26,7 +32,6 @@ public:
         sportskiCentar->povecajSaldo(iznos);
         return true;
     }
-
 };
 
 #endif // UGOVOR_H_INCLUDED
