@@ -25,6 +25,9 @@ public:
         zaposleni[brojZaposlenih++]=novi;
     }
 
+    void dodajSportskiObjekat(SportskiObjekat novi){
+    }
+
     //SportskiCentar(const SportskiCentar& s):SportskiObjekat(s):Osoba(s);
     //SportskiCentar(const SportskiObjekat& s, const Osoba& o);
 

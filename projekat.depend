@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590175156 source:c:\users\vuk\documents\github\projekat\main.cpp
+1590245405 source:c:\users\vuk\documents\github\projekat\main.cpp
 	<iostream>
 	"SportskiObjekat.hpp"
 	"Teretana.hpp"
@@ -27,7 +27,7 @@
 1590173578 c:\users\vuk\documents\github\projekat\osoba.hpp
 	"Pol.hpp"
 
-1590137382 c:\users\vuk\documents\github\projekat\teretana.hpp
+1590245369 c:\users\vuk\documents\github\projekat\teretana.hpp
 
 1590173856 c:\users\vuk\documents\github\projekat\igrac.hpp
 
@@ -37,11 +37,11 @@
 1590137382 c:\users\vuk\documents\github\projekat\rekreativac.hpp
 	"fajl.hpp"
 
-1590137382 c:\users\vuk\documents\github\projekat\sponzor.hpp
+1590230769 c:\users\vuk\documents\github\projekat\sponzor.hpp
 
 1590137382 c:\users\vuk\documents\github\projekat\ugovor.hpp
 
-1590174632 c:\users\vuk\documents\github\projekat\tim.hpp
+1590230969 c:\users\vuk\documents\github\projekat\tim.hpp
 	<vector>
 	"Igrac.hpp"
 	<string>

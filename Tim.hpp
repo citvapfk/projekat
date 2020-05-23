@@ -26,7 +26,9 @@ public:
     }
 
     string getIme(){return ime;}
+    void setIme(string i){ime=i;}
     double getSaldo() {return saldo;}
+
 
     void dodajIgraca(Igrac* i)
     {
@@ -97,7 +99,7 @@ public:
         {
             while ( getline (fajl,linija) )
             {
-                
+
                 Igrac* igrac = new Igrac();
                 stringstream ss(linija);
                 int i=0;
@@ -151,9 +153,8 @@ public:
         for (auto it=igraci.begin(); it!=igraci.end(); it++) {
            fajl << (*it)->getIme() <<  "," << (*it)->getPrezime() << "," << (*it)->getSaldo() << endl;
         }
-       /// na kraju zatvaramo fajl
         fajl.close();
-    
+
     }
 
 
