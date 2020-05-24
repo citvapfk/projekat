@@ -30,6 +30,7 @@ public:
         }
         sponzor->smanjiSaldo(iznos);
         sportskiCentar->povecajSaldo(iznos);
+        cout << "Ugovor je realizovan \n";
         return true;
     }
 };

@@ -57,6 +57,14 @@ public:
         }
     }
 
+    void ispisSaldaIgraca()
+    {
+        for (auto it = igraci.begin(); it != igraci.end(); it++)
+        {
+            cout << (*it)->getIme() << " " << (*it)->getPrezime() << " - saldo je " << (*it)->getSaldo() << endl;
+        }
+    }
+
     //ispis igraca koji imaju vise od 15 pobeda
     void ispisIgraca15()
     {
@@ -86,6 +94,7 @@ public:
         }
         smanjiSaldo(trener->getPlata());
         trener->povecajSaldo(trener->getPlata());
+        cout << "Isplata je izvrsena \n";
         return true;
     }
 
@@ -98,11 +107,13 @@ public:
         }
         smanjiSaldo(trener->bonus());
         trener->povecajSaldo(trener->bonus());
+        cout << "Isplata bonusa od " << trener->bonus() << " je izvrsena \n";
         return true;
     }
 
     void dodajIgracaIzTxt(string nazivFajla)
     {
+
         string linija;
         ifstream fajl(nazivFajla);
         if (fajl.is_open())
@@ -142,12 +153,23 @@ public:
             }
             fajl.close();
         }
+        else
+        {
+            cout<<"Fajl ne postoji \n";
+            return;
+        }
+        
     }
 
     void isplataPlataSvimIgracima()
     {
         for (auto it = igraci.begin(); it != igraci.end(); it++)
         {
+            if ((*it)->getPlata() > saldo)
+            {
+                cout << "Nema dovoljno sredstava na racunu tima za sledecu isplatu \n";
+                return;
+            }
             cout << (*it)->getIme() << " " << (*it)->getPrezime() << ", saldo je " << (*it)->getSaldo() << endl;
             double plata = (*it)->getPlata();
             cout << "Plata je " << plata << endl;
@@ -161,6 +183,11 @@ public:
     {
         for (auto it = igraci.begin(); it != igraci.end(); it++)
         {
+            if ((*it)->bonus() > saldo)
+            {
+                cout << "Nema dovoljno sredstava na racunu tima za sledecu isplati \n";
+                return;
+            }
             cout << (*it)->getIme() << " " << (*it)->getPrezime() << ", saldo je " << (*it)->getSaldo() << endl;
             double bonus = (*it)->bonus();
             cout << "Bonus je " << bonus << endl;

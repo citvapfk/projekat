@@ -41,8 +41,11 @@ Tim *NapraviTim()
     string prezimeIgraca;
     string datumRodjenjaIgraca;
     string pozicijaIgraca;
+    string imeFajla;
 
     Tim *tim = new Tim();
+    tim->setTrener(NULL);
+
     int broj;
     do
     {
@@ -52,6 +55,11 @@ Tim *NapraviTim()
              << " 1 - Unesi ime i saldo tima\n"
              << " 2 - Dodaj trenera\n"
              << " 3 - Dodaj igraca\n"
+             << " 4 - Obrisi igraca\n"
+             << " 5 - Ispisi broj igraca u timu\n"
+             << " 6 - Ucitaj igrace iz .txt fajla\n"
+             << " 7 - Exportuj salda igraca u .txt fajl\n"
+             << " 8 - Ispisi sve igrace iz tima\n"
              << " 9 - Povratak na glavni meni\n"
              << " Upisite zeljeni broj: ";
         cin >> broj;
@@ -73,7 +81,6 @@ Tim *NapraviTim()
         }
         case 2:
         {
-
             cout << "Trener: \n";
             cout << "Ime: ";
             cin >> imeTrenera;
@@ -121,6 +128,48 @@ Tim *NapraviTim()
             tim->dodajIgraca(igrac);
             break;
         }
+        case 4:
+        {
+            if (tim->brojIgraca() == 0)
+            {
+                cout << "Morate prvo napraviti barem jednog igraca\n";
+                break;
+            }
+            cout << "Unesite redni broj igraca kojeg zelite da obrisete : ";
+            int redniBrojIgraca;
+            cin >> redniBrojIgraca;
+            tim->obrisiIgraca(redniBrojIgraca);
+            cout << "Igrac je obrisan \n";
+            break;
+        }
+        case 5:
+        {
+            cout << "Broj igraca u timu je " << tim->brojIgraca() << endl;
+            break;
+        }
+        case 6:
+        {
+            cout << "Unesite ime fajla iz kog zelite da dodate igraca: ";
+            cin >> imeFajla;
+            tim->dodajIgracaIzTxt(imeFajla);
+            break;
+        }
+        case 7:
+        {
+            cout << "Unesite ima fajla u koji zelite da exportujete igrace: ";
+            cin >> imeFajla;
+            tim->ispisiSaldaIgracaUtxt(imeFajla);
+            cout << "Export izvrsen \n";
+            break;
+        }
+        case 8:
+        {
+            if (tim->brojIgraca() == 0)
+            {
+                cout << "U timu nema igraca \n";
+            }
+            tim->ispisIgraca();
+        }
         case 9:
         {
             break;
@@ -143,7 +192,7 @@ Sponzor *NapraviSponzora()
     cout << "Unesite ime sponzora: ";
     string imeSponzora;
     cin >> imeSponzora;
-    cout << "Saldo na racunu: \n";
+    cout << "Saldo na racunu: ";
     double saldoSponzora;
     cin >> saldoSponzora;
     sponzor->setIme(imeSponzora);
@@ -161,7 +210,7 @@ Ugovor *NapraviUgovor(Sponzor *sponzor, SportskiCentar *sportskiCentar)
     }
 
     cout << "Ugovor: \n";
-    cout << "Iznos: \n";
+    cout << "Iznos: ";
     double iznosUgovora;
     cin >> iznosUgovora;
     Ugovor *ugovor = new Ugovor(sponzor, sportskiCentar, 2, iznosUgovora);
@@ -208,11 +257,113 @@ void prikaziSaldoNaRacunuTima(Tim *tim)
     cout << "Stanje na racunu tima je " << tim->getSaldo() << endl;
 }
 
+void isplatiFinansijeTimu(SportskiCentar *sportskiCentar, Tim *tim)
+{
+    if (sportskiCentar == NULL || tim == NULL)
+    {
+        cout << "Morate prvo uneti podatke za sportski centar i tim!!! \n";
+        return;
+    }
+    cout << "Isplata finansija timu od strane sportskog centra \n";
+    cout << "Unesite iznos isplate: ";
+    double iznosIsplate;
+    cin >> iznosIsplate;
+    sportskiCentar->isplataFinansija(tim, iznosIsplate);
+    cout << "Saldo na racunu sportskog centra: " << sportskiCentar->getSaldo() << endl;
+    cout << "Saldo na racunu tima: " << tim->getSaldo() << endl;
+}
+
+void isplatiPlatuTreneru(Tim *tim)
+{
+    if (tim == NULL || tim->getTrener() == NULL)
+    {
+        cout << "Morate prvo uneti podatke za tim i trenera!!! \n";
+        return;
+    }
+    tim->isplatiTreneruPlatu();
+    cout << "Saldo na racunu trenera: " << (tim->getTrener())->getSaldo() << endl;
+    cout << "Saldo na racunu tima: " << tim->getSaldo() << endl;
+}
+
+void isplatiBonusTreneru(Tim *tim)
+{
+    if (tim == NULL || tim->getTrener() == NULL)
+    {
+        cout << "Morate prvo uneti podatke za tim i trenera!!! \n";
+        return;
+    }
+
+    tim->isplatiTreneruBonus();
+    cout << "Saldo na racunu trenera: " << (tim->getTrener())->getSaldo() << endl;
+    cout << "Saldo na racunu tima: " << tim->getSaldo() << endl;
+}
+
+void isplatiPlatuIgracima(Tim *tim)
+{
+    if (tim == NULL || tim->brojIgraca() == 0)
+    {
+        cout << "Morate prvo uneti podatke za tim i igrace \n";
+        return;
+    }
+
+    tim->isplataPlataSvimIgracima();
+    cout << "Saldo na racunu tima: " << tim->getSaldo() << endl;
+}
+
+void isplatiBonusIgracima(Tim *tim)
+{
+    if (tim == NULL || tim->brojIgraca() == 0)
+    {
+        cout << "Morate prvo uneti podatke za tim i igrace \n";
+        return;
+    }
+
+    tim->isplataBonusaSvimIgracima();
+    cout << "Saldo na racunu tima: " << tim->getSaldo() << endl;
+}
+
+void realizujUgovor(Ugovor *ugovor, SportskiCentar *sportskiCentar, Sponzor *sponzor)
+{
+    if (ugovor == NULL)
+    {
+        cout << "Morate uneti podatke za ugovor !!! \n";
+        return;
+    }
+
+    ugovor->realizujUgovor();
+    cout << "Saldo na racunu sportskog centra: "
+         << sportskiCentar->getSaldo() << endl;
+    ;
+    cout << "Saldo na racunu sponzora: "
+         << sponzor->getSaldo() << endl;
+}
+
+void prikaziSaldoNaRacunuTrenera(Tim *tim)
+{
+    if (tim == NULL || tim->getTrener() == NULL)
+    {
+        cout << "Morate prvo uneti podatke za tim i trenera !!! \n";
+        return;
+    }
+    cout << "Saldo trenera je " << (tim->getTrener())->getSaldo() << endl;
+}
+
+void prikaziSaldaNaRacunimaSvihIgraca(Tim *tim)
+{
+    if (tim == NULL || tim->brojIgraca() == 0)
+    {
+        cout << "Morate prvo uneti podatke za tim i igrace !!! \n";
+        return;
+    }
+    tim->ispisSaldaIgraca();
+}
+
 int main()
 {
+
+    SportskiCentar *sportskiCentar = NULL;
     Tim *tim = NULL;
     Sponzor *sponzor = NULL;
-    SportskiCentar *sportskiCentar = NULL;
     Ugovor *ugovor = NULL;
 
     int broj;
@@ -225,10 +376,17 @@ int main()
              << " 3 - Napravi sponzora\n"
              << " 4 - Napravi ugovor izmedju postojaceg sponzora i sportskog centra\n"
              << " 11 - Prikazi saldo na racunu sportskog centra\n"
-             << " 12 - Prikazi saldo na racunu sponzora\n"
-             << " 13 - Prikazi iznos ugovora\n"
-             << " 14 - Prikazi saldo na racunu tima\n"
-             << " 21 - Realizuj ugovor\n"
+             << " 12 - Prikazi saldo na racunu tima\n"
+             << " 13 - Prikazi saldo na racunu sponzora\n"
+             << " 14 - Prikazi iznos ugovora\n"
+             << " 15 - Prikazi saldo na racunu trenera\n"
+             << " 16 - Prikazi salda na racunima svih igraca\n"
+             << " 20 - Isplati finansije timu\n"
+             << " 21 - Isplati platu treneru\n"
+             << " 22 - Isplati bonus treneru\n"
+             << " 23 - Isplati platu igracima\n"
+             << " 24 - Isplati bonus igracima\n"
+             << " 25 - Realizuj ugovor\n"
              << " 99 - Kraj programa\n"
              << " Upisite zeljeni broj: ";
         cin >> broj;
@@ -251,13 +409,37 @@ int main()
             prikaziStanjeNaRacunuSporsogCentra(sportskiCentar);
             break;
         case 12:
-            prikaziStanjeNaRacunuSponzora(sponzor);
+            prikaziSaldoNaRacunuTima(tim);
             break;
         case 13:
-            prikaziIznosUgovora(ugovor);
+            prikaziStanjeNaRacunuSponzora(sponzor);
             break;
         case 14:
-            prikaziSaldoNaRacunuTima(tim);
+            prikaziIznosUgovora(ugovor);
+            break;
+        case 15:
+            prikaziSaldoNaRacunuTrenera(tim);
+            break;
+        case 16:
+            prikaziSaldaNaRacunimaSvihIgraca(tim);
+            break;
+        case 20:
+            isplatiFinansijeTimu(sportskiCentar, tim);
+            break;
+        case 21:
+            isplatiPlatuTreneru(tim);
+            break;
+        case 22:
+            isplatiBonusTreneru(tim);
+            break;
+        case 23:
+            isplatiPlatuIgracima(tim);
+            break;
+        case 24:
+            isplatiBonusIgracima(tim);
+            break;
+        case 25:
+            realizujUgovor(ugovor, sportskiCentar, sponzor);
             break;
         case 99:
             cout << "Kraj programa\n";
